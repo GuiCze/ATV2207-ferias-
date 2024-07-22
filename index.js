@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")();
-const mod = require('./modulo.js')
+const mod = require('./atividades.js')
 console.log('Digite:\n1:Adicionar nova atividade. \n2:Listar as atividades realizadas. \n3:Para sair ');
 let ent=prompt();
 let ciclo=true;
