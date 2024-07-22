@@ -24,14 +24,28 @@ const ADD = () =>{
         }
     });
     ferias.push(atvObj);
-    console.log('Digite:\n1:Adicionar nova atividade. \n2:Listar as atividades realizadas. \n3:Para sair ');
+    console.log('Digite:\n1:Adicionar nova atividade. \n2:Listar as atividades realizadas.  \n3:Para remover uma atividade em especifico. \n4:Para sair ');
 }
 function printar(){
     console.log(ferias);
-    console.log('Digite:\n1:Adicionar nova atividade. \n2:Listar as atividades realizadas. \n3:Para sair ');
+}
+function remove(){
+    printar()
+    let dia = prompt('Qual o dia deseja remover?')
+    for(let i=0;i<ferias.length;i++){
+        if(ferias[i].dia.includes(dia)){
+            ferias.splice(i,1)
+            console.log('Atividades do dia ',dia ,' removida(s) com sucesso');
+        }else{
+            console.log('dia não encontado');
+        }
+    }
+    console.log('Digite:\n1:Adicionar nova atividade. \n2:Listar as atividades realizadas.  \n3:Para remover uma atividade em especifico. \n4:Para sair ');
 }
 
 
 module.exports.add = ADD;
 module.exports.ver = printar;
+module.exports.rem = remove;
+
 
